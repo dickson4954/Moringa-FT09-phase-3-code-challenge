@@ -3,6 +3,22 @@ from .connection import get_db_connection
 def create_tables():
     conn = get_db_connection()
     cursor = conn.cursor()
+    cursor.execute('''
+        DROP TABLE IF EXISTS authors
+        
+    ''')
+     
+    cursor.execute('''
+        DROP TABLE IF EXISTS articles
+        
+    ''')
+    cursor.execute('''
+        DROP TABLE IF EXISTS magazines
+        
+    ''')
+
+
+
     
     cursor.execute('''
         CREATE TABLE IF NOT EXISTS authors (
